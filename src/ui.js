@@ -12,6 +12,7 @@ import { OutputNode } from "./nodes/outputNode";
 import { TextNode } from "./nodes/textNode";
 
 import "reactflow/dist/style.css";
+import { DragulaNode } from "./nodes/dragulaNode";
 
 const gridSize = 20;
 const proOptions = { hideAttribution: true };
@@ -20,6 +21,11 @@ const nodeTypes = {
   llm: LLMNode,
   customOutput: OutputNode,
   text: TextNode,
+  dragula: DragulaNode,
+  ghost: DragulaNode,
+  venom: DragulaNode,
+  gigachad: DragulaNode,
+  jarvis: DragulaNode,
 };
 
 const selector = (state) => ({
