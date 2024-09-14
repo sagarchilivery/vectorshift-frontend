@@ -13,7 +13,7 @@ export const DraggableNode = ({ type, label }) => {
 
   return (
     <div
-      className={`bg-[#1d0c4ace] hover:bg-[#1d0c4a] border-blue-800 flex flex-col items-center min-w-[150px] justify-center border ${type} backdrop-blur-2xl cursor-grab px-6 rounded-md h-10`}
+      className={`bg-[#1d0c4ace] hover:bg-[#1d0c4a] border-blue-800 flex flex-col items-center min-w-[125px] justify-center border ${type} backdrop-blur-2xl cursor-grab px-6 rounded-md h-10`}
       onDragStart={(event) => {
         onDragStart(event, type) && (event.target.style.cursor = "grabbing");
       }}
@@ -21,7 +21,7 @@ export const DraggableNode = ({ type, label }) => {
       onDragEnd={(event) => (event.target.style.cursor = "grab")}
       draggable
     >
-      <span className=" text-white font-semibold font-sans">{label}</span>
+      <span className="font-sans font-semibold text-white ">{label}</span>
     </div>
   );
 };
