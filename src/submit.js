@@ -1,15 +1,49 @@
+/* eslint-disable no-unused-vars */
 // submit.js
+import { useState } from "react";
 import { useStore } from "./store";
 
 export const SubmitButton = () => {
   // Accessing nodes and edges from the store
-  const nodes = useStore((state) => state.nodes);
-  const edges = useStore((state) => state.edges);
+  const num_nodes = useStore((state) => state.nodes);
+  const num_edges = useStore((state) => state.edges);
+  const [response, setResponse] = useState(null);
 
   const HandleSubmit = async () => {
-    console.log("nodes: ", nodes);
-    console.log("edges: ", edges);
+    const pipelineData = {
+      nodes: num_nodes.map((node) => ({ id: node.id })),
+      edges: num_edges.map((edge) => ({
+        source: edge.source,
+        target: edge.target,
+      })),
+    };
+
+    try {
+      // Make the API request
+      const res = await fetch(
+        "https://vectorshift-backend.onrender.com/pipelines/parse",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(pipelineData),
+        }
+      );
+
+      // Parse the JSON response
+      const data = await res.json();
+
+      // Show alert with the result
+      alert(
+        `Number of nodes: ${data.num_nodes}, Number of edges: ${data.num_edges}, Is DAG: ${data.is_dag}`
+      );
+    } catch (error) {
+      console.error("Error:", error);
+      alert("An error occurred. Please try again.");
+    }
   };
+
   return (
     <div className="flex items-center justify-center mt-4">
       <button
