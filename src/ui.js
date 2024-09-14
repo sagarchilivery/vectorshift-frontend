@@ -13,6 +13,8 @@ import { TextNode } from "./nodes/textNode";
 
 import "reactflow/dist/style.css";
 import { DragulaNode } from "./nodes/dragulaNode";
+import { GhostNode } from "./nodes/ghostNode";
+import { VenomNode } from "./nodes/venomNode";
 
 const gridSize = 20;
 const proOptions = { hideAttribution: true };
@@ -22,8 +24,8 @@ const nodeTypes = {
   customOutput: OutputNode,
   text: TextNode,
   dragula: DragulaNode,
-  ghost: DragulaNode,
-  venom: DragulaNode,
+  ghost: GhostNode,
+  venom: VenomNode,
   gigachad: DragulaNode,
   jarvis: DragulaNode,
 };

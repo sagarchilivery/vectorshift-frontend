@@ -30,7 +30,11 @@ export const DragulaNode = (props) => {
     title: "Dragula",
     hasNameField: false,
     hasTypeField: false,
-    customContent: () => <div>This is a Dragula</div>,
+    customContent: () => (
+      <p>
+        This is a <span className="font-bold animate-color-loop ">Dragula</span>{" "}
+      </p>
+    ),
   };
 
   return <BaseNode {...props} handles={handles} config={config} />;
