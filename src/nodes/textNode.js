@@ -12,8 +12,8 @@ export const TextNode = (props) => {
 
   // Function to validate JavaScript variable names
   const validateVariable = (str) => {
-    // Check if string starts and ends with {{ and }}
-    const isCurlyBraced = /^\{\{(.+)\}\}$/.test(str);
+    // Check if string starts and ends with {{ and }} and also checking it doesnt have any whitespace
+    const isCurlyBraced = /^\{\{([a-zA-Z_$][a-zA-Z_$0-9]*)\}\}$/.test(str);
 
     if (isCurlyBraced) {
       // Extract the variable name by removing the curly brackets
