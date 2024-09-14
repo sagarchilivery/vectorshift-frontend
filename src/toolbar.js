@@ -24,9 +24,9 @@ export const PipelineToolbar = () => {
         <DraggableNode type="text" label="Text" />
         <DraggableNode type="dragula" label="Dragula" />
         <DraggableNode type="ghost" label="Ghost" />
-        <DraggableNode type="venom" label="Venom" />
-        <DraggableNode type="gigachad" label="GigaChad" />
-        <DraggableNode type="jarvis" label="Jarvis" />
+        <DraggableNode type="statue" label="Statue" />
+        <DraggableNode type="writeup" label="Writeup" />
+        <DraggableNode type="caution" label="Caution" />
       </div>
     </div>
   );

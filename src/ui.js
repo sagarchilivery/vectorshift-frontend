@@ -14,7 +14,9 @@ import { TextNode } from "./nodes/textNode";
 import "reactflow/dist/style.css";
 import { DragulaNode } from "./nodes/dragulaNode";
 import { GhostNode } from "./nodes/ghostNode";
-import { VenomNode } from "./nodes/venomNode";
+import { StatueNode } from "./nodes/statueNode";
+import { WriteupNode } from "./nodes/writeupNode";
+import { CautionNode } from "./nodes/cautionNode";
 
 const gridSize = 20;
 const proOptions = { hideAttribution: true };
@@ -25,9 +27,9 @@ const nodeTypes = {
   text: TextNode,
   dragula: DragulaNode,
   ghost: GhostNode,
-  venom: VenomNode,
-  gigachad: DragulaNode,
-  jarvis: DragulaNode,
+  statue: StatueNode,
+  writeup: WriteupNode,
+  caution: CautionNode,
 };
 
 const selector = (state) => ({

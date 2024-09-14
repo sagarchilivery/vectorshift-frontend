@@ -1,9 +1,9 @@
-// VenomNode.js
+// Dragula.js
 
-import { Position } from "reactflow";
 import { BaseNode } from "./baseNode";
+import { Position } from "reactflow";
 
-export const VenomNode = (props) => {
+export const WriteupNode = (props) => {
   const handles = {
     source: {
       type: "source",
@@ -25,16 +25,16 @@ export const VenomNode = (props) => {
       },
     ],
   };
+
   const config = {
-    title: "Venom",
+    title: "Writeup",
     hasNameField: false,
     hasTypeField: false,
     customContent: () => (
-      <img
-        src="./venom.jpg"
-        alt="venom"
-        className=" w-full h-[120px] object-cover"
-      />
+      <p className=" max-w-[250px]">
+        lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      </p>
     ),
   };
 

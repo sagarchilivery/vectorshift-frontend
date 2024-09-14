@@ -13,15 +13,15 @@ export const GhostNode = (props) => {
   };
 
   const config = {
-    title: "Ghost Rider",
+    title: "Ghost",
     idPrefix: "customInput-",
     defaultName: "input_",
     nameField: "inputName",
     typeField: "inputType",
-    defaultType: "Options",
+    defaultType: "Text",
     hasTypeField: true,
     typeOptions: [
-      { value: "Skeleton", label: "Text" },
+      { value: "White", label: "Text" },
       { value: "Wheels on fire", label: "File" },
     ],
   };
