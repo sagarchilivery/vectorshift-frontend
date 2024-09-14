@@ -1,6 +1,15 @@
 // submit.js
+import { useStore } from "./store";
 
 export const SubmitButton = () => {
+  // Accessing nodes and edges from the store
+  const nodes = useStore((state) => state.nodes);
+  const edges = useStore((state) => state.edges);
+
+  const HandleSubmit = async () => {
+    console.log("nodes: ", nodes);
+    console.log("edges: ", edges);
+  };
   return (
     <div className="flex items-center justify-center mt-4">
       <button
@@ -8,6 +17,7 @@ export const SubmitButton = () => {
         style={{
           fontWeight: "600",
         }}
+        onClick={HandleSubmit}
         type="submit"
       >
         Submit
