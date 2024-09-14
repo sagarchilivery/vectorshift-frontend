@@ -1,6 +1,7 @@
 // baseNode.js
 import { Handle } from "reactflow";
 import { useState } from "react";
+import Dropdown from "../components/dropdown";
 
 export const BaseNode = ({
   children,
@@ -21,7 +22,7 @@ export const BaseNode = ({
   const [currText, setCurrText] = useState(data?.text || "{{input}}");
 
   const handleNameChange = (e) => setCurrName(e.target.value);
-  const handleTypeChange = (e) => setCurrType(e.target.value);
+  const handleTypeChange = (value) => setCurrType(value);
   const handleTextChange = (e) => {
     setCurrText(e.target.value);
     if (setText) setText(e.target.value); // Call setText if it is passed
@@ -42,7 +43,7 @@ export const BaseNode = ({
         <span>{config.title}</span>
       </div>
 
-      <div className="px-5 py-2 pb-5">
+      <div className="flex flex-col gap-3 px-5 py-2 pb-5">
         {/* Name field if present */}
         {config.hasNameField && (
           <div className="flex gap-1.5 items-center">
@@ -58,21 +59,13 @@ export const BaseNode = ({
 
         {/* Type field if present */}
         {config.hasTypeField && (
-          <div className="">
-            <label>
-              Type:
-              <select
-                value={currType}
-                className="text-black"
-                onChange={handleTypeChange}
-              >
-                {config.typeOptions.map((option) => (
-                  <option key={option.value} value={option.value}>
-                    {option.label}
-                  </option>
-                ))}
-              </select>
-            </label>
+          <div className="flex w-full gap-5">
+            <label>Type:</label>
+            <Dropdown
+              caption={currType}
+              options={config.typeOptions.map((option) => option.value)}
+              onSelect={handleTypeChange} // Use the callback to update the type
+            />
           </div>
         )}
 
