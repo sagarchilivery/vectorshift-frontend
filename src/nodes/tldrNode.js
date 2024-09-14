@@ -3,7 +3,7 @@
 import { BaseNode } from "./baseNode";
 import { Position } from "reactflow";
 
-export const CautionNode = (props) => {
+export const TLDRNode = (props) => {
   const handles = {
     source: {
       type: "source",
@@ -27,10 +27,10 @@ export const CautionNode = (props) => {
   };
 
   const config = {
-    title: "Caution",
+    title: "TLDR;",
     hasNameField: false,
     hasTypeField: false,
-    customContent: () => <div>Safety is better than precaution</div>,
+    customContent: () => <div>TLDR; have a good day</div>,
   };
 
   return <BaseNode {...props} handles={handles} config={config} />;

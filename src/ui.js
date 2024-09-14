@@ -16,7 +16,7 @@ import { DragulaNode } from "./nodes/dragulaNode";
 import { GhostNode } from "./nodes/ghostNode";
 import { StatueNode } from "./nodes/statueNode";
 import { WriteupNode } from "./nodes/writeupNode";
-import { CautionNode } from "./nodes/cautionNode";
+import { TLDRNode } from "./nodes/tldrNode";
 
 const gridSize = 20;
 const proOptions = { hideAttribution: true };
@@ -29,7 +29,7 @@ const nodeTypes = {
   ghost: GhostNode,
   statue: StatueNode,
   writeup: WriteupNode,
-  caution: CautionNode,
+  tldr: TLDRNode,
 };
 
 const selector = (state) => ({
