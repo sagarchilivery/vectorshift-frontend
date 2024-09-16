@@ -21,7 +21,8 @@ export const SubmitButton = () => {
     try {
       // Make the API request
       const res = await fetch(
-        "https://vectorshift-backend.onrender.com/pipelines/parse",
+        // "https://vectorshift-backend.onrender.com/pipelines/parse",
+        "http://127.0.0.1:8000/pipelines/parse",
         {
           method: "POST",
           headers: {
